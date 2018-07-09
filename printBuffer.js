@@ -23,7 +23,7 @@ https.get(requestOptions, function (response) {
     // console.log('Chunk Received. Length:', data);
     // console.log("data!!!!" + data)
     newData = data;
-    console.log("NewData", newData);
+    // console.log("NewData", newData);
     // console.log()
 
   });
