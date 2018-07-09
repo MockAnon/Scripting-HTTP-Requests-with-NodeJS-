@@ -13,6 +13,7 @@ var https = require('https');
 // response, which is a Stream that represents the HTTP response
 https.get(requestOptions, function (response) {
 
+  let newData = '';
 
   // set encoding of received data to UTF-8
   response.setEncoding('utf8');
@@ -21,10 +22,10 @@ https.get(requestOptions, function (response) {
   response.on('data', function (data) {
     // console.log('Chunk Received. Length:', data);
     // console.log("data!!!!" + data)
-    let newData = data;
+    newData = data;
     console.log("NewData", newData);
     // console.log()
-    // let newDat = data();
+
   });
 
 // console.log(http.data);
@@ -34,8 +35,13 @@ https.get(requestOptions, function (response) {
   // the callback is invoked when all of the data has been received
   // (the `end` of the stream)
   // response.on('end', function() {
-  //   console.log('Response stream complete.');
+  //   console.log('NewData');
   // });
+
+
+    response.on('end', function() {
+    console.log('Response stream complete.', newData);
+  });
 
 });
 
