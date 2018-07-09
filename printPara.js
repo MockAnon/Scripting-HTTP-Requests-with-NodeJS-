@@ -1,5 +1,5 @@
 
-
+module.exports = {
 
 function getAndPrintHTML (options) {
 
@@ -36,6 +36,7 @@ https.get(options, function (response) {
 
 });
 
+}
 }
 
 
